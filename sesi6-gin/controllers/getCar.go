@@ -3,7 +3,6 @@ package controllers
 import (
 	"fmt"
 	"net/http"
-	"controllers"
 	"github.com/gin-gonic/gin"
 )
 
