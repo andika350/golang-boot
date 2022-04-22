@@ -106,3 +106,44 @@ func(in *controllerPerson) DeletePersonByID(c *gin.Context) {
 }
 
 //update person by id
+func (in *controllerPerson) UpdatePersonByID(c *gin.Context) {
+	var (
+		person 	models.Person
+		newPerson models.Person
+	)
+
+	id := c.Param("id")
+
+	err := in.db.First(&person, id).Error
+	if err != nil {
+		fmt.Println(err.Error())
+		c.JSON(http.StatusBadRequest, gin.H{
+			"error": err,
+		})
+		return
+	}
+
+	err = json.NewDecoder(c.Request.Body).Decode(&newPerson)
+	if err != nil {
+		fmt.Println(err.Error())
+		c.JSON(http.StatusBadRequest, gin.H{
+			"error": err,
+		})
+		return
+	}
+
+	err = in.db.Model(&person).Updates(newPerson).Error
+	if err != nil {
+		fmt.Println(err.Error())
+		c.JSON(http.StatusBadRequest, gin.H{
+			"error": err,
+		})
+		return
+	}
+
+	c.JSON(http.StatusOK, gin.H{
+		"msg": "update data success !",
+		"data": newPerson,
+	})
+
+}
