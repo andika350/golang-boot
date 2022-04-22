@@ -1,0 +1,30 @@
+package main
+
+import "fmt"
+
+func main()  {
+	
+	var age int8 = 23
+	var age2 int = 256
+	var leave float32 = 3.4
+
+	fmt.Println(age)
+	fmt.Printf("Age : %v\tage2 : %v\n", age, age2)
+	fmt.Printf("Age : %T\tage2 : %T\n", age, age2)
+	fmt.Printf("%f\n%.2f\n", leave, leave)
+	
+	var isSingle bool = true
+	fmt.Printf("%t\n", isSingle) //%t untuk data type bool
+
+	var location string = `
+Jl. Layar Raya
+No. 74
+0009872
+	`
+
+	fmt.Printf("%s\n", location) //back tick deklarasi string
+
+
+
+	
+}

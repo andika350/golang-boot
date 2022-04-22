@@ -1,0 +1,27 @@
+package main
+
+import "fmt"
+
+	var name string = "Hacktiv8"
+	var total int = 11
+
+func main()  {
+	
+	class := "Golang" // := shorthand untuk deklarasi, hanya bisa di gunakan didalam fungsi
+
+
+	fmt.Println("Bootcamp", name, "berjumlah", total)
+	fmt.Printf("Name: %T\tTotal : %T\tClass : %T\n", name, total, class)//printf check tipe  f=
+	fmt.Printf("Name: %s\tTotal : %d\tClass : %v\n", name, total, class)//panggil variable dengan % sesuai data type %d = int %s = string | %v untuk semua tipe data
+	
+	
+	var mhs1, mhs2, mhs3 string = "Nama1","Nama2","Nama3" //deklarasi multiple variable
+	var age1, age2, age3 = 20,21,19
+	class1,class2 := "go", "NodeJs"
+
+
+	fmt.Println(mhs1, mhs2, mhs3)
+	fmt.Println(age1, age2, age3)
+	fmt.Println(class1, class2)
+
+}
